@@ -1,0 +1,84 @@
+{
+  "name": "LuaAppRuntime",
+
+  "globIgnorePaths": [
+    "**/*.spec.lua"
+  ],
+
+  "tree": {
+    "$className": "DataModel",
+
+    "ReplicatedStorage": {
+      "$path": "src/ReplicatedStorage",
+
+      "Packages": {
+        "$path": "Packages"
+      },
+
+      "Services": {
+        "$className": "Folder",
+
+        "CoreGui": {
+          "$className": "ScreenGui"
+        }
+      }
+    },
+
+    "ServerScriptService": {
+      "Server": {
+        "$path": "src/server"
+      }
+    },
+
+    "StarterPlayer": {
+      "StarterPlayerScripts": {
+        "Client": {
+          "$path": "src/client"
+        }
+      }
+    },
+    "Players": {
+      "$properties": {
+        "CharacterAutoLoads": false
+      }
+    },
+    "Lighting": {
+      "$properties": {
+        "Ambient": [0.24705882370471954, 0.24705882370471954, 0.24705882370471954],
+        "ColorShift_Bottom": [1, 0.9529411792755127, 0.9019607901573181],
+        "ColorShift_Top": [1, 0.9921568632125854, 0.9607843160629272],
+        "OutdoorAmbient": [0.27843138575553894, 0.25882354378700256, 0.2235294133424759],
+        "FogColor": [0.8509804010391235, 0.7254902124404907, 0.5568627715110779],
+        "FogEnd": 1000,
+        "Brightness": 1,
+        "GlobalShadows": true,
+        "Technology": "Voxel",
+        "ClockTime": 13.3,
+        "GeographicLatitude": 353
+      },
+      "Bloom": {
+        "$className": "BloomEffect",
+        "$properties": {
+          "Intensity": 0.05,
+          "Size": 24,
+          "Threshold": 0.95
+        }
+      },
+      "ColorCorrection": {
+        "$className": "ColorCorrectionEffect",
+        "$properties": {
+          "Brightness": 0.02,
+          "Contrast": 0.35,
+          "Saturation": 0.175,
+          "TintColor": [1, 1, 1]
+        }
+      },
+      "$path": "src/Lighting"
+    },
+    "HttpService": {
+      "$properties": {
+        "HttpEnabled": true
+      }
+    }
+  }
+}
