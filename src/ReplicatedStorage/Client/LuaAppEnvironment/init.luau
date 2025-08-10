@@ -1,5 +1,5 @@
-local FakeGame = require(script.game)
-local settings = require(script.settings)
+local FakeGame = require(script:WaitForChild("game"))
+local settings = require(script:WaitForChild("settings"))
 
 local Environment = {
     ["Environment"] = {
@@ -22,7 +22,7 @@ end
 ]] 
 
 function Environment:Apply(Env: {[string]: any})
-    for Name, Value in Environment do
+    for Name, Value in Environment.Environment do
         Env[Name] = Value
     end
 end

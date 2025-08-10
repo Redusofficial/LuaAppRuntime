@@ -10,7 +10,21 @@ local Start = DateTime.now().unixTimestampMillis
 local ProjectBuildPath = "./build/ProjectBuild.rbxl"
 local OutputPath = "./build/LuaAppRuntime.rbxl"
 
-local InjectCode = 'print("hello world", script:GetFullName())'
+local InjectCode = '_G.Env(getfenv())'
+
+local ReplaceCode = {
+  {"OverlayNativeInput = true,", ""},
+  {"OverlayNativeInput = true;", ""},
+  {
+    "self.connection\x20=\x20event:Connect(callback)",
+    [[
+    if not event then
+      return
+    end
+    self.connection = event:Connect(callback)
+    ]]
+  }
+}
 
 local BuildResult = process.exec("rojo", {
     "build",
@@ -32,12 +46,25 @@ local game = roblox.deserializePlace(PlaceFile)
 
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
+for _, Child in ReplicatedStorage:FindFirstChild("Children"):GetChildren() do
+    Child.Parent = ReplicatedStorage
+end
+
+ReplicatedStorage:FindFirstChild("Children"):Destroy()
+
 for _, Module: ModuleScript in ReplicatedStorage.Services:GetDescendants() do
     if not Module:IsA("ModuleScript") then
       continue
     end
 
     Module.Source = InjectCode .. "\n" .. Module.Source
+
+    for _, Replacement in ReplaceCode do
+      if string.find(Module.Source, "self.connection\x20=\x20event:Connect(callback)") then
+        print(Module.Name)
+      end
+      Module.Source = string.gsub(Module.Source, Replacement[1], Replacement[2])
+    end
 end
 
 local LuaAppRuntime = roblox.serializePlace(game)

@@ -10,17 +10,29 @@
       "Packages": {
         "$path": "Packages"
       },
+      "Config": {
+        "$path": "Config.json"
+      },
       "Services": {
         "$className": "Folder",
         "CoreGui": {
           "$className": "ScreenGui",
+          "$properties": {
+              "IgnoreGuiInset": true
+          },
           "RobloxGui": {
             "$className": "ScreenGui",
+            "$properties": {
+              "IgnoreGuiInset": true
+            },
             "Modules": {
               "$className": "Folder",
 
               "LuaChat": {
-                "$path": "content/internal/Chat/Modules"
+                "$path": "content/internal/Chat/Modules/LuaChat"
+              },
+              "ChatMaster": {
+                "$path": "content/internal/Chat/Modules/ChatMaster.lua"
               },
               "LuaApp": {
                 "$path": "content/internal/LuaApp/Modules/LuaApp"

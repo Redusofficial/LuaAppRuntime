@@ -1,0 +1,1 @@
+lune run build.luau

@@ -6,3 +6,4 @@ realm = "shared"
 
 [dependencies]
 wrapperservice = "redusofficial/wrapperservice@1.1.2"
+goodsignal = "stravant/goodsignal@0.2.1"
