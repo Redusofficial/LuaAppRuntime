@@ -1,3 +1,3 @@
 # LuaAppRuntime
 
-Project aimed to emulate the 2018L Mobile app inside Roblox
+Project aimed to emulate the 2018L (2.365.265265) Mobile app inside Roblox
