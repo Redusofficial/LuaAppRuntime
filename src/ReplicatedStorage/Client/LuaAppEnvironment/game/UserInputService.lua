@@ -5,7 +5,12 @@ local WrapperService = require(ReplicatedStorage:WaitForChild("Packages"):WaitFo
 local Signal = require(ReplicatedStorage:WaitForChild("Packages"):WaitForChild("goodsignal"))
 
 local StatusBarSize = Vector2.new(1280, 0)
-local ChangedSignal = Signal.new()
+local ChangedSignals = {
+    ["StatusBarSize"] = Signal.new(),
+    ["BottomBarSize"] = Signal.new(),
+    ["RightBarSize"] = Signal.new(),
+    ["NavBarSize"] = Signal.new(),
+}
 
 local Overrides = {
     ["GetPlatform"] = {
@@ -15,8 +20,8 @@ local Overrides = {
     },
     ["GetPropertyChangedSignal"] = {
         ["Method"] = function(self, property: string)
-            if table.find({"StatusBarSize", "BottomBarSize", "RightBarSize", "NavBarSize"}, property) then
-                return ChangedSignal
+            if ChangedSignals[property] then
+                return ChangedSignals[property]
             end
 
             return UserInputService:GetPropertyChangedSignal(property)
@@ -33,6 +38,9 @@ local Overrides = {
     },
     ["NavBarSize"] = {
         ["Property"] = Vector2.new(1280, 44) -- These values are recorded from 
+    },
+    ["StatusBarTapped"] = {
+        ["Property"] = Signal.new()
     },
 }
 

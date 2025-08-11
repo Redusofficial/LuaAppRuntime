@@ -1,0 +1,139 @@
+{
+  "sorts": [
+    {
+      "token": "T637593270456628151_TopRetaining,N,H_adeb",
+      "name": "TopRetaining",
+      "displayName": "Recommended",
+      "gameSetTargetId": null,
+      "timeOptionsAvailable": false,
+      "genreOptionsAvailable": true,
+      "numberOfRows": 1,
+      "numberOfGames": 0,
+      "isDefaultSort": true,
+      "contextUniverseId": null,
+      "contextCountryRegionId": null,
+      "tokenExpiryInSeconds": 3600
+    }
+  ],
+  "timeFilters": [
+    {
+      "token": "T637593270456628151_Now_aadb",
+      "name": "Now",
+      "tokenExpiryInSeconds": 3600
+    },
+    {
+      "token": "T637593270456628151_PastDay_d62f",
+      "name": "PastDay",
+      "tokenExpiryInSeconds": 3600
+    },
+    {
+      "token": "T637593270456628151_PastWeek_70c2",
+      "name": "PastWeek",
+      "tokenExpiryInSeconds": 3600
+    },
+    {
+      "token": "T637593270456628151_PastMonth_b9f4",
+      "name": "PastMonth",
+      "tokenExpiryInSeconds": 3600
+    },
+    {
+      "token": "T637593270456628151_AllTime_8cd0",
+      "name": "AllTime",
+      "tokenExpiryInSeconds": 3600
+    }
+  ],
+  "genreFilters": [
+    {
+      "token": "T637593270456628151_1_2fa3",
+      "name": "All",
+      "tokenExpiryInSeconds": 3600
+    },
+    {
+      "token": "T637593270456628151_19_c88d",
+      "name": "Building",
+      "tokenExpiryInSeconds": 3600
+    },
+    {
+      "token": "T637593270456628151_11_aa0f",
+      "name": "Horror",
+      "tokenExpiryInSeconds": 3600
+    },
+    {
+      "token": "T637593270456628151_7_a643",
+      "name": "Town and City",
+      "tokenExpiryInSeconds": 3600
+    },
+    {
+      "token": "T637593270456628151_17_23ef",
+      "name": "Military",
+      "tokenExpiryInSeconds": 3600
+    },
+    {
+      "token": "T637593270456628151_15_9b4e",
+      "name": "Comedy",
+      "tokenExpiryInSeconds": 3600
+    },
+    {
+      "token": "T637593270456628151_8_b170",
+      "name": "Medieval",
+      "tokenExpiryInSeconds": 3600
+    },
+    {
+      "token": "T637593270456628151_13_12ae",
+      "name": "Adventure",
+      "tokenExpiryInSeconds": 3600
+    },
+    {
+      "token": "T637593270456628151_9_4d21",
+      "name": "Sci-Fi",
+      "tokenExpiryInSeconds": 3600
+    },
+    {
+      "token": "T637593270456628151_12_eeff",
+      "name": "Naval",
+      "tokenExpiryInSeconds": 3600
+    },
+    {
+      "token": "T637593270456628151_20_121a",
+      "name": "FPS",
+      "tokenExpiryInSeconds": 3600
+    },
+    {
+      "token": "T637593270456628151_21_ee4b",
+      "name": "RPG",
+      "tokenExpiryInSeconds": 3600
+    },
+    {
+      "token": "T637593270456628151_14_671f",
+      "name": "Sports",
+      "tokenExpiryInSeconds": 3600
+    },
+    {
+      "token": "T637593270456628151_10_565e",
+      "name": "Fighting",
+      "tokenExpiryInSeconds": 3600
+    },
+    {
+      "token": "T637593270456628151_16_dfbe",
+      "name": "Western",
+      "tokenExpiryInSeconds": 3600
+    }
+  ],
+  "gameFilters": [
+    {
+      "token": "T637593270456628151_Any_43d0",
+      "name": "Any",
+      "tokenExpiryInSeconds": 3600
+    },
+    {
+      "token": "T637593270456628151_Classic_2b6f",
+      "name": "Classic",
+      "tokenExpiryInSeconds": 3600
+    }
+  ],
+  "pageContext": {
+    "pageId": "c00f5922-ab79-40c9-a315-12b35433ba86",
+    "isSeeAllPage": null
+  },
+  "gameSortStyle": null
+}

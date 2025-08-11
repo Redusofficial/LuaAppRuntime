@@ -1,6 +1,7 @@
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local WrapperService = require(ReplicatedStorage:WaitForChild("Packages"):WaitForChild("wrapperservice"))
+local PseudoHttp = require(ReplicatedStorage:WaitForChild("Client"):WaitForChild("Services"):WaitForChild("PseudoHttp"))
 
 local Overrides = {
     ["GetService"] = {
@@ -22,19 +23,27 @@ local Overrides = {
         end
     },
     ["HttpPostAsync"] = {
-        --["Method"] = function(self, url: string, data: string, contentType: string?, httpRequestType: Enum.HttpRequestType?)
-        ["Method"] = function(self, ...)
-            print(...)
+        ["Method"] = function(self, url: string, data: string, contentType: string?, httpRequestType: Enum.HttpRequestType?)
+        --["Method"] = function(self, ...)
+            local ResultData = PseudoHttp:Execute("POST", url, {}, data)
 
-            return nil
+            if ResultData.StatusCode == 200 then
+                return ResultData.Data
+            end
+
+            return ""
         end
     },
     ["HttpGetAsync"] = {
-        --["Method"] = function(self, url: string, httpRequestType: Enum.HttpRequestType?)
-        ["Method"] = function(self, ...)
-            print(...)
+        ["Method"] = function(self, url: string, httpRequestType: Enum.HttpRequestType?)
+        --["Method"] = function(self, ...)
+            local ResultData = PseudoHttp:Execute("GET", url, {}, "")
 
-            return nil
+            if ResultData.StatusCode == 200 then
+                return ResultData.Data
+            end
+
+            return ""
         end
     }
 }

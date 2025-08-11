@@ -15,12 +15,11 @@ local InjectCode = '_G.Env(getfenv())'
 local ReplaceCode = {
   {"OverlayNativeInput = true,", ""},
   {"OverlayNativeInput = true;", ""},
+  {"player:GetUnder13%(%)", "true"},
   {
-    "self.connection\x20=\x20event:Connect(callback)",
+    "self.connection = event:Connect%(callback%)",
     [[
-    if not event then
-      return
-    end
+if not event then return end
     self.connection = event:Connect(callback)
     ]]
   }
@@ -60,9 +59,6 @@ for _, Module: ModuleScript in ReplicatedStorage.Services:GetDescendants() do
     Module.Source = InjectCode .. "\n" .. Module.Source
 
     for _, Replacement in ReplaceCode do
-      if string.find(Module.Source, "self.connection\x20=\x20event:Connect(callback)") then
-        print(Module.Name)
-      end
       Module.Source = string.gsub(Module.Source, Replacement[1], Replacement[2])
     end
 end

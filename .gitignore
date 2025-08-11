@@ -1,9 +1,11 @@
 /Build
-/Content
+/Content/*
 /Packages
 
 LuaAppRuntime.rbxl
 LuaAppRuntime.rbxl.lock
 sourcemap.json
+
+!content/README.md
 
 wally.lock
