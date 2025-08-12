@@ -42,6 +42,9 @@ local Overrides = {
     ["StatusBarTapped"] = {
         ["Property"] = Signal.new()
     },
+    ["OnScreenKeyboardAnimationDuration"] = {
+        ["Property"] = 0.25
+    },
 }
 
 local FakeUserInputService = WrapperService:Create(UserInputService)

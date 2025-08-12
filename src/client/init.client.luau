@@ -11,6 +11,7 @@ local CoreGui = ReplicatedStorage:WaitForChild("Services"):WaitForChild("CoreGui
 local ScreenGuiV2 = ReplicatedStorage:WaitForChild("ScreenGuiV2")
 
 local Environment = require(ReplicatedStorage:WaitForChild("Client"):WaitForChild("LuaAppEnvironment"))
+local Handlers = ReplicatedStorage:WaitForChild("Client"):WaitForChild("Handlers")
 
 CoreGui.Parent = LocalPlayer.PlayerGui
 ScreenGuiV2.Parent = game:GetService("ServerStorage")
@@ -36,6 +37,10 @@ task.spawn(function()
 end)
 
 local StarterScript = require(script:WaitForChild("LuaAppStarterScript"))
+
+for _, Handler in Handlers:GetChildren() do
+    task.spawn(require(Handler), Environment.Environment)
+end
 
 print("Running LuaAppStarterScript")
 StarterScript()

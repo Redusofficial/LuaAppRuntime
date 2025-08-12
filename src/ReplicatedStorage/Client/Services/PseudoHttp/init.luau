@@ -56,6 +56,14 @@ Router:get("/v1/games/sorts", function(request)
     return Response:Json(require(script:WaitForChild("SortsData")))
 end)
 
+Router:get("/v2/chat-settings", function(request)
+    return Response:Json({
+        chatEnabled = true,
+        isActiveChatUser = true,
+        isConnectTabEnabled = true
+    })
+end)
+
 Router:post("/v1/presence/users", function(request)
     local Data = {}
 

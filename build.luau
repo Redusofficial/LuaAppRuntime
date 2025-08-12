@@ -4,6 +4,9 @@ local roblox = require("@lune/roblox")
 local fs = require("@lune/fs")
 
 print("Building LuaAppRuntime")
+if not fs.isDir("./build/") then
+  fs.writeDir("./build/")
+end
 
 local Start = DateTime.now().unixTimestampMillis
 
@@ -15,6 +18,7 @@ local InjectCode = '_G.Env(getfenv())'
 local ReplaceCode = {
   {"OverlayNativeInput = true,", ""},
   {"OverlayNativeInput = true;", ""},
+  {"ManualFocusRelease = true,", ""},
   {"player:GetUnder13%(%)", "true"},
   {
     "self.connection = event:Connect%(callback%)",
