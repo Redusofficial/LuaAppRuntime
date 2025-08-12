@@ -1,4 +1,4 @@
-# File Strucure
+# File Structure
 ```
 - internal
     - Chat
