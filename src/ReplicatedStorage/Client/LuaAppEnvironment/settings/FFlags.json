@@ -24,6 +24,7 @@
     "FStringLuaErrorsInfluxSeries": "LuaShellErrors",
     "FIntLuaErrorsInfluxThrottling": 1,
     "FStringLuaAppsDiagErrorCounter": "LuaAppsErrorCount",
+    "FStringLuaAppDefaultPageOverride": "",
     "FFlagLuaHomeControlNativeBottomBar": true,
 	"FFlagLuaAppRouterControlsTabBarVisibility": true
 }

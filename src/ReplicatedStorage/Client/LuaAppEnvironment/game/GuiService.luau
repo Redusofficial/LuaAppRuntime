@@ -29,6 +29,11 @@ local Overrides = {
             return 1
         end
     },
+    ["IsTenFootInterface"] = {
+        ["Method"] = function()
+            return false
+        end
+    },
     ["GetSafeZoneOffsets"] = {
         ["Method"] = function()
             return {

@@ -23,8 +23,6 @@ local Overrides = {
                         Options.Headers or {},
                          Options.Body or ""
                     )
-					
-					print(Callback)
 
                     Callback(true, {
                         Body = ResultData.Body,
