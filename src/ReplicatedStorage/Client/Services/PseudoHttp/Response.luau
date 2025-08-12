@@ -1,5 +1,5 @@
 export type ResponseData = {
-    Data: string,
+    Body: string,
     Headers: {[string]: any?},
     StatusCode: number
 }
@@ -11,7 +11,7 @@ local Response = {}
 function Response.new(Data: string?, StatusCode: number?, Headers: {}?): ResponseData
     local self = {}
     
-    self.Data = Data or ""
+    self.Body = Data or ""
     self.StatusCode = StatusCode or 200
     self.Headers = Headers or {}
 

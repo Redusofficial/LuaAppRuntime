@@ -33,6 +33,23 @@ return {
 
                 return false
             end,
+            ["getFFlag"] = function(self, Name: string)
+                if IsDebug then
+                    RequestedFFlags[Name] = true
+                end
+
+                for _, Type: string in {"FFlag", "DFFlag"} do
+                    if FFlags[Type..Name] ~= nil then
+                        return FFlags[Type..Name]
+                    end
+                end
+                
+                if IsDebug then
+                    warn("Missing FFlag", Name)
+                end
+
+                return false
+            end,
             ["GetFVariable"] = function(self, Name: string)
                 if IsDebug then
                     RequestedFFlags[Name] = true

@@ -91,7 +91,7 @@ function Http:Execute(Method: string, Url: string, Headers: {}, Data: string): R
     })
 
     if not Success then
-        return Response.new("", 500)
+        return Response:Status(404)
     end
     
     return Data

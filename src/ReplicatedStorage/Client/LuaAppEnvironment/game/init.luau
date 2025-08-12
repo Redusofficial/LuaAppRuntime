@@ -28,7 +28,7 @@ local Overrides = {
             local ResultData = PseudoHttp:Execute("POST", url, {}, data)
 
             if ResultData.StatusCode == 200 then
-                return ResultData.Data
+                return ResultData.Body
             end
 
             return ""
@@ -40,7 +40,7 @@ local Overrides = {
             local ResultData = PseudoHttp:Execute("GET", url, {}, "")
 
             if ResultData.StatusCode == 200 then
-                return ResultData.Data
+                return ResultData.Body
             end
 
             return ""
