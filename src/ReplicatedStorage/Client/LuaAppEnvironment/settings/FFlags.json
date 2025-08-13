@@ -27,5 +27,6 @@
     "FStringLuaAppDefaultPageOverride": "",
     "FFlagLuaHomeControlNativeBottomBar": true,
 	"FFlagLuaAppRouterControlsTabBarVisibility": true,
-    "FFlagLuaAppUseImageSets": true
+    "FFlagLuaAppUseImageSets": true,
+    "FFlagLuaAppLegacyInputDisabledGlobally2": true
 }

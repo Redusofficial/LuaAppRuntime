@@ -19,7 +19,8 @@ local ReplaceCode = {
   {"OverlayNativeInput = true,", ""},
   {"OverlayNativeInput = true;", ""},
   {"ManualFocusRelease = true,", ""},
-  {"player:GetUnder13%(%)", "true"},
+  {"player:GetUnder13%(%)", "false"},
+  {":IsDescendantOf%(game%)", ".Parent ~= nil"},
   {
     "self.connection = event:Connect%(callback%)",
     [[

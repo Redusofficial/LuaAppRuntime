@@ -3,9 +3,15 @@ local Http = {}
 local Routing = require(script:WaitForChild("Router"))
 local UrlParser = require(script:WaitForChild("Url"))
 local Response = require(script:WaitForChild("Response"))
+local Static = require(script.Static)
 
 local Players = game:GetService("Players")
 local HttpService = game:GetService("HttpService")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+
+local LocalPlayer = Players.LocalPlayer
+
+local HttpGetRemote: RemoteFunction = ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("HttpGet")
 
 local Router = Routing.new()
 
@@ -53,7 +59,7 @@ Router:get("/v1/users/:userid/friends", function(request)
 end)
 
 Router:get("/v1/games/sorts", function(request)
-    return Response:Json(require(script:WaitForChild("SortsData")))
+    return Response:Json(Static.GAME_SORTS)
 end)
 
 Router:get("/v2/chat-settings", function(request)
@@ -83,6 +89,30 @@ Router:post("/v1/presence/users", function(request)
 
     return Response:Json({
         userPresences = Data
+    })
+end)
+
+Router:get("/v1/avatar-rules", function(request)
+    return Response:Json(Static.AVATAR_RULES)
+end)
+
+Router:get("/v1/avatar", function(request)
+    local Result = HttpGetRemote:InvokeServer(`https://avatar.roblox.com/v1/users/{LocalPlayer.UserId}/avatar`)
+
+    return Response:Data(Result)
+end)
+
+Router:post("/v1/avatar/set-body-colors", function(request)
+    return Response:Json({
+        success = true,
+        avatar_hash = ""
+    })
+end)
+
+Router:post("/v1/avatar/set-player-avatar-type", function(request)
+    return Response:Json({
+        success = true,
+        avatar_hash = ""
     })
 end)
 

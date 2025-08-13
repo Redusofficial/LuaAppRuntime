@@ -62,6 +62,12 @@
       "StarterPlayerScripts": {
         "Client": {
           "$path": "src/client"
+        },
+        "PlayerScriptsLoader": {
+          "$className": "Folder"
+        },
+        "PlayerModule": {
+          "$className": "Folder"
         }
       }
     },

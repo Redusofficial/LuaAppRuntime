@@ -26,4 +26,9 @@ function Response:Json(Data: {[any]: any?})
     return Response.new(HttpService:JSONEncode(Data), 200)
 end
 
+function Response:Data(Data: string)
+    return Response.new(Data, 200)
+end
+
+
 return Response
