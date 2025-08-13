@@ -76,6 +76,11 @@
         "CharacterAutoLoads": false
       }
     },
+    "StarterGui": {
+      "$properties": {
+        "ScreenOrientation": "Sensor"
+      }
+    },
     "Lighting": {
       "$path": "src/Lighting",
       "$properties": {

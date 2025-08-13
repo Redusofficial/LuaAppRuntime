@@ -116,6 +116,34 @@ Router:post("/v1/avatar/set-player-avatar-type", function(request)
     })
 end)
 
+Router:post("/v1/avatar/set-wearing-assets", function(request)
+	return Response:Json({
+		success = true,
+		avatar_hash = ""
+	})
+end)
+
+Router:post("/v1/avatar/set-scales", function(request)
+	return Response:Json({
+		success = true,
+		avatar_hash = ""
+	})
+end)
+
+Router:get("/v1/users/:userid/outfits", function(request)
+	local Result = HttpGetRemote:InvokeServer(`https://avatar.roblox.com/v1/users/{request.Params.userid}/outfits?page={request.Url.query.page}&itemsPerPage={request.Url.query.itemsPerPage}&outfitType=Avatar`)
+
+	return Response:Data(Result)
+end)
+
+Router:get("/v1/outfits/:outfitid/details", function(request)
+	local Result = HttpGetRemote:InvokeServer(
+		`https://avatar.roblox.com/v1/outfits/{request.Params.outfitid}/details`
+	)
+
+	return Response:Data(Result)
+end)
+
 function Http:Execute(Method: string, Url: string, Headers: {}, Data: string): Response.ResponseData
     print(Method, Url, Data)
     local Parsed = UrlParser.parse(Url, {

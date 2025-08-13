@@ -64,7 +64,7 @@ local function resolve(path, node, params)
     if f then return f, bindings end
   end
 
-  params["Params"] = params
+  params["Params"] = {}
 
   for param_name, child_node in pairs(node['TOKEN'] or {}) do
     local param_value = params[param_name]

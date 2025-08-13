@@ -8,6 +8,9 @@ local Overrides = {
     ["RobloxEventReceived"] = {
         ["Property"] = Signal.new()
     },
+    ["RobloxConnectionChanged"] = {
+        ["Property"] = Signal.new()
+    },
     ["IsLuaHomePageEnabled"] = {
         ["Property"] = true
     },
