@@ -26,5 +26,6 @@
     "FStringLuaAppsDiagErrorCounter": "LuaAppsErrorCount",
     "FStringLuaAppDefaultPageOverride": "",
     "FFlagLuaHomeControlNativeBottomBar": true,
-	"FFlagLuaAppRouterControlsTabBarVisibility": true
+	"FFlagLuaAppRouterControlsTabBarVisibility": true,
+    "FFlagLuaAppUseImageSets": true
 }

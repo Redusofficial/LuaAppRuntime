@@ -1,0 +1,11 @@
+[creator]
+type = "user"
+id = 2986480155
+
+[codegen]
+output_name = "ImageSet.luau"
+strip_extension = true
+
+[inputs.assets]
+path = "content/textures/ImageSet/**/*.png"
+output_path = "src/ReplicatedStorage/"

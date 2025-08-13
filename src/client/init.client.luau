@@ -28,6 +28,8 @@ task.spawn(function()
             for _, Type in {"TopbarEnabled", "ResetButtonCallback"} do
                 StarterGui:SetCore(Type, false)
             end
+
+            StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.All, false)
         end) then
             break
         end
